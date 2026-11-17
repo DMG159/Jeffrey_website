@@ -134,8 +134,8 @@ tr:last-child td{border-bottom:0}
 /* locations */
 .loc-grid{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:32px 48px}
 .loc h3{font-size:24px;font-weight:700}
-.loc .tag{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pine);margin-bottom:8px}
 .loc address{font-style:normal;font-size:18px;margin:10px 0 16px;line-height:1.45}
+.hours{margin-top:8px}
 .hours td{padding:12px 6px}
 .hours tr:first-child td{padding-top:4px}
 .hours tr.today:first-child td{padding-top:12px}
@@ -420,19 +420,17 @@ footer a:hover{color:#fff}
     </div>
     <div class="loc-grid">
       <div class="loc">
-        <p class="tag">Studio</p>
         <h3>Boulder</h3>
         <address>4775 13th Street<br>Boulder, CO 80304</address>
         <a class="btn btn-outline btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=4775%2013th%20Street%2C%20Boulder%2C%20CO%2080304" target="_blank" rel="noopener">Get directions<span class="sr"> to the Boulder studio</span></a>
       </div>
       <div class="loc">
-        <p class="tag">Studio</p>
         <h3>Louisville</h3>
         <address>364 S. McCaslin Blvd.<br>Louisville, CO 80027</address>
         <a class="btn btn-outline btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=364%20S.%20McCaslin%20Blvd.%2C%20Louisville%2C%20CO%2080027" target="_blank" rel="noopener">Get directions<span class="sr"> to the Louisville studio</span></a>
       </div>
       <div class="loc hours-panel" id="hours">
-        <p class="tag">Hours</p>
+        <h3>Hours</h3>
         <table class="hours">
           <tbody>
             <tr data-days="Monday Tuesday Wednesday Thursday"><td>Mon to Thu<span class="today-badge">Today</span></td><td>5 AM to 7 PM</td></tr>
