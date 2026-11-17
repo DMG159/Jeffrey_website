@@ -29,8 +29,8 @@ Until that is done, the form opens the visitor's email app with their answers fi
 
 ## Things that still live on chop-fitness.com
 
-Checkout ("Buy a plan"), the full Chop Method page, group programs,
-all member stories, and the privacy policy and terms all link to the current site.
+Checkout ("Buy a plan"), the full member stories, and the privacy policy and terms
+link to the current site. The Chop Method page and group programs are not linked.
 
 ## Before going live on the real domain
 
