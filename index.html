@@ -103,7 +103,7 @@ ul{margin:0;padding:0;list-style:none}
 /* three ways */
 .ways{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .way{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
-.way img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.way img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:var(--pos,50% 50%)}
 .way .body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
 .way .num{font:700 13px/1 var(--body);letter-spacing:.14em;color:var(--sage)}
 .way h3{font-size:24px;font-weight:700}
@@ -114,6 +114,7 @@ ul{margin:0;padding:0;list-style:none}
 
 /* price tables */
 .price-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:18px;margin-top:18px}
+.price-grid>*{min-width:0}
 .panel{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
 .panel h3{font-size:22px;font-weight:700}
 .panel .sub{color:var(--muted);font-size:15px;margin-top:4px}
@@ -261,7 +262,8 @@ footer a:hover{color:#fff}
   .fact{padding:15px}
   .fact .big{font-size:18.5px}
   .fact .small{font-size:14px}
-  .way{grid-template-columns:104px 1fr}
+  .way{display:flex}
+  .way img{height:auto;aspect-ratio:4/3;object-position:var(--pos-m,var(--pos,50% 50%))}
   .way .body{padding:16px;gap:5px}
   .way h3{font-size:21px}
   .way .desc{font-size:15px}
@@ -275,6 +277,18 @@ footer a:hover{color:#fff}
   table{font-size:15px}
   td strong{font-size:16.5px}
   .hero .btn{width:100%}
+}
+@media (max-width:380px){
+  .wrap{padding:0 14px}
+  .nav{width:calc(100% + 28px);margin-left:-14px;margin-right:-14px;padding-left:8px;padding-right:8px}
+  .panel{padding:16px 14px}
+  table{font-size:14px}
+  th{font-size:11px;letter-spacing:.04em}
+  td,th{padding-left:3px;padding-right:3px}
+  td strong{font-size:15px}
+  .save{font-size:12px;padding:2px 7px}
+  .quickbar{gap:6px;padding-left:8px;padding-right:8px}
+  .quickbar a{font-size:14px;gap:5px;padding-left:4px;padding-right:4px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
@@ -355,7 +369,7 @@ footer a:hover{color:#fff}
 
     <ul class="ways">
       <li class="way">
-        <img src="assets/studio.jpg" alt="Jeffrey flexing in the studio beside a squat rack, with Chop the pitbull sitting in front of him" width="900" height="998" loading="lazy" style="object-position:50% 25%">
+        <img src="assets/studio.jpg" alt="Jeffrey flexing in the studio beside a squat rack, with Chop the pitbull sitting in front of him" width="900" height="998" loading="lazy" style="--pos:50% 25%;--pos-m:50% 62%">
         <div class="body">
           <span class="num">01</span>
           <h3>In the studio</h3>
@@ -375,7 +389,7 @@ footer a:hover{color:#fff}
         </div>
       </li>
       <li class="way">
-        <img src="assets/online.jpg" alt="Three friends on a snowy ski run, one doing a handstand under a snowboard" width="884" height="1176" loading="lazy" style="object-position:50% 40%">
+        <img src="assets/online.jpg" alt="Three friends on a snowy ski run, one doing a handstand under a snowboard" width="884" height="1176" loading="lazy" style="--pos:50% 45%;--pos-m:50% 52%">
         <div class="body">
           <span class="num">03</span>
           <h3>Online, wherever you are</h3>
