@@ -80,31 +80,30 @@ ul{margin:0;padding:0;list-style:none}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 
 /* at a glance */
-.glance{margin-top:-84px;position:relative;z-index:2}
-.glance-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.fact{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow-strong);padding:20px;display:flex;flex-direction:column;gap:6px;border:1px solid var(--border)}
+.glance{margin-top:-76px;position:relative;z-index:2}
+.glance-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-strong)}
+.fact{background:var(--card);padding:20px 22px;display:flex;flex-direction:column;gap:6px;color:var(--ink);text-decoration:none;transition:background .15s}
+.fact:hover{background:#fff;color:var(--ink)}
+.fact:hover .big{color:var(--sunrise)}
+.fact:focus-visible{outline-offset:-4px}
 .fact .label{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pine)}
 .fact .label svg{width:18px;height:18px;flex:none}
-.fact .big{font:700 22px/1.15 var(--display);color:var(--ink)}
-.fact .big a{color:inherit;text-decoration:none}
-.fact .big a:hover{color:var(--sunrise)}
+.fact .big{font:700 22px/1.15 var(--display);transition:color .15s}
 .fact .small{font-size:15px;color:var(--muted);line-height:1.4;overflow-wrap:anywhere}
-.fact .more{margin-top:auto;padding-top:8px;font-size:15px;font-weight:600}
 
 /* sections */
-.section{padding:84px 0}
-.section.alt{background:var(--sand)}
-.section.sage{background:var(--sage-soft)}
-.section-head{max-width:680px;margin-bottom:36px}
-.section-head .eyebrow{color:var(--pine)}
-.section-head h2{font-size:clamp(32px,4.6vw,46px);font-weight:800;margin:10px 0 12px}
-.section-head p{color:var(--muted);font-size:18px}
+.section{padding:76px 0}
+.section + .section{padding-top:0}
+.section + .section > .wrap::before{content:"";display:block;border-top:1px solid var(--border);margin-bottom:76px}
+.section-head{max-width:680px;margin-bottom:32px}
+.section-head h2{font-size:clamp(32px,4.6vw,44px);font-weight:800}
+.section-head p{color:var(--muted);font-size:18px;margin-top:10px}
 
 /* three ways */
-.ways{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.way{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
-.way img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:var(--pos,50% 50%)}
-.way .body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.ways{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.way{display:flex;flex-direction:column}
+.way img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--radius);object-position:var(--pos,50% 50%)}
+.way .body{padding:18px 0 0;display:flex;flex-direction:column;gap:8px;flex:1}
 .way .num{font:700 13px/1 var(--body);letter-spacing:.14em;color:var(--sage)}
 .way h3{font-size:24px;font-weight:700}
 .way .where{font-weight:600;color:var(--pine);font-size:15px}
@@ -118,28 +117,28 @@ ul{margin:0;padding:0;list-style:none}
 .rates .amt b{font:700 21px/1 var(--display)}
 .rates li.note{font-size:14.5px;color:var(--muted);min-height:62px}
 .save{display:inline-block;background:var(--sage-soft);color:var(--pine);font-weight:700;font-size:13px;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.know{margin-top:36px;padding-top:28px;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr auto;gap:24px 40px;align-items:center}
+.know h3{font-size:20px;font-weight:700;margin-bottom:12px}
+.know ul{display:grid;grid-template-columns:1fr 1fr;gap:8px 28px;font-size:16px}
+.know li{position:relative;padding-left:24px;color:#33413a}
+.know li::before{content:"";position:absolute;left:0;top:.45em;width:12px;height:7px;border-left:2.5px solid var(--pine);border-bottom:2.5px solid var(--pine);transform:rotate(-45deg)}
+.know .side{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.know .side small{color:var(--muted);font-size:13px;max-width:230px}
 
-/* panels and tables */
-.panel{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
-.panel .sub{color:var(--muted);font-size:15px;margin-top:4px}
+/* tables */
 table{width:100%;border-collapse:collapse;font-size:16px}
 td{text-align:right;padding:13px 6px;border-bottom:1px solid var(--border);font-variant-numeric:tabular-nums}
 td:first-child{text-align:left;padding-left:0}
 tr:last-child td{border-bottom:0}
-.know{margin-top:18px;background:var(--pine-deep);color:var(--cream);border-radius:var(--radius);padding:26px 28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
-.know h3{font-size:20px;font-weight:700;margin-bottom:12px;color:var(--sandstone)}
-.know ul{display:grid;grid-template-columns:1fr 1fr;gap:8px 28px;font-size:16px}
-.know li{position:relative;padding-left:24px;color:#faf6efeb}
-.know li::before{content:"";position:absolute;left:0;top:.45em;width:12px;height:7px;border-left:2.5px solid var(--sage);border-bottom:2.5px solid var(--sage);transform:rotate(-45deg)}
-.know .side{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
-.know .side small{color:#faf6efb3;font-size:13px;max-width:230px}
 
 /* locations */
-.loc-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:32px 48px}
 .loc h3{font-size:24px;font-weight:700}
 .loc .tag{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pine);margin-bottom:8px}
 .loc address{font-style:normal;font-size:18px;margin:10px 0 16px;line-height:1.45}
 .hours td{padding:12px 6px}
+.hours tr:first-child td{padding-top:4px}
+.hours tr.today:first-child td{padding-top:12px}
 .hours td:first-child{font-weight:600}
 .hours tr.today td{background:var(--sage-soft)}
 .hours tr.today td:first-child{padding-left:10px;border-radius:8px 0 0 8px}
@@ -148,52 +147,45 @@ tr:last-child td{border-bottom:0}
 tr.today .today-badge{display:inline-block}
 
 /* trainers */
-.trainers{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.trainer{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:grid;grid-template-columns:200px 1fr}
-.trainer img{width:100%;height:100%;object-fit:cover;min-height:270px}
-.trainer .body{padding:22px}
+.trainers{display:grid;grid-template-columns:1fr 1fr;gap:36px 48px}
+.trainer{display:grid;grid-template-columns:190px 1fr;gap:24px;align-items:start}
+.trainer img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius)}
 .trainer h3{font-size:25px;font-weight:700}
 .trainer .role{color:var(--sunrise);font-weight:700;font-size:15px;margin:4px 0 12px}
 .trainer li{position:relative;padding-left:16px;font-size:15.5px;margin-bottom:6px;color:#33413a}
 .trainer li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--sage)}
 .trainer .edu{margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:15px}
-.mascot{margin-top:20px;display:flex;align-items:center;gap:12px;font-size:16px;color:var(--muted)}
+.mascot{margin-top:28px;display:flex;align-items:center;gap:12px;font-size:16px;color:var(--muted)}
 .mascot img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none}
 .mascot strong{color:var(--ink)}
 
 /* reviews carousel */
-.section.dark{background:var(--pine-deep);color:var(--cream)}
-.section.dark .section-head{margin-bottom:24px}
-.section.dark .section-head .eyebrow{color:var(--sandstone)}
 .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
 .slides::-webkit-scrollbar{display:none}
 .slide{flex:0 0 100%;scroll-snap-align:start;margin:0;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:4px 2px}
 .slide blockquote{margin:0;max-width:880px;font:600 clamp(21px,2.900vw,31px)/1.32 var(--display)}
-.slide figcaption{font-weight:700;color:var(--sandstone);font-size:17px}
+.slide figcaption{font-weight:700;color:var(--pine);font-size:17px}
 .car-bar{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:28px}
 .car-controls{display:flex;align-items:center;gap:10px}
-.car-btn{width:44px;height:44px;border-radius:50%;border:2px solid #faf6ef66;background:transparent;color:var(--cream);cursor:pointer;display:grid;place-items:center;padding:0}
-.car-btn:hover{background:#faf6ef1f;border-color:var(--cream)}
+.car-btn{width:44px;height:44px;border-radius:50%;border:2px solid var(--pine);background:transparent;color:var(--pine);cursor:pointer;display:grid;place-items:center;padding:0;transition:background .15s,color .15s}
+.car-btn:hover{background:var(--pine);color:var(--cream)}
 .car-btn svg{width:20px;height:20px}
 .dots{display:flex}
 .dots button{width:22px;height:28px;border:0;background:transparent;cursor:pointer;padding:0;display:grid;place-items:center}
-.dots button::before{content:"";width:8px;height:8px;border-radius:50%;background:#faf6ef4d;transition:background .15s,transform .15s}
-.dots button[aria-current="true"]::before{background:var(--sandstone);transform:scale(1.35)}
-.car-meta{margin-left:auto;font-size:15px;color:#faf6ef99;display:flex;flex-wrap:wrap;gap:6px 18px}
-.car-meta a{color:var(--sandstone)}
-.car-meta a:hover{color:#fff}
+.dots button::before{content:"";width:8px;height:8px;border-radius:50%;background:#1c2a2433;transition:background .15s,transform .15s}
+.dots button[aria-current="true"]::before{background:var(--pine);transform:scale(1.35)}
+.car-meta{margin-left:auto;font-size:15px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px}
 
 /* faq */
-.faq{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.qa{background:var(--cream);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #7e9a8040;padding:22px 24px}
-.qa h3{font:700 19px/1.25 var(--display);margin-bottom:8px}
+.faq{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 48px}
+.qa h3{font:700 20px/1.25 var(--display);margin-bottom:8px}
 .qa p{color:#33413a;font-size:16.5px}
 
 /* contact */
-.contact-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:start}
-form.panel{padding:28px}
+.contact-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:32px 56px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
+.panel .sub{color:var(--muted);font-size:15px;margin:4px 0 18px}
 form h3{font-size:26px;font-weight:700}
-form .sub{margin-bottom:18px}
 .field{margin-bottom:14px}
 .field label{display:block;font-weight:600;font-size:15px;margin-bottom:5px}
 .field label span{font-weight:400;color:var(--muted)}
@@ -205,12 +197,12 @@ form .sub{margin-bottom:18px}
 .form-status.ok{display:block;background:var(--sage-soft);color:var(--pine-deep)}
 .form-status.err{display:block;background:#fbe9e7;color:#93201a}
 .hp{position:absolute;left:-9999px}
-.reach{display:flex;flex-direction:column;gap:12px}
-.reach a.line{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px 20px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow)}
-.reach a.line:hover{border-color:var(--pine)}
+.reach{display:flex;flex-direction:column;gap:22px;padding-top:6px}
+.reach a.line{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink)}
+.reach a.line:hover b{color:var(--sunrise)}
 .reach svg{width:24px;height:24px;color:var(--pine);flex:none}
 .reach small{display:block;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.reach b{font-size:18px;overflow-wrap:anywhere}
+.reach b{font-size:19px;overflow-wrap:anywhere}
 
 /* footer */
 footer{background:var(--pine-deep);color:#faf6efcc;padding:48px 0 40px;font-size:15px}
@@ -229,8 +221,9 @@ footer a:hover{color:#fff}
 @media (max-width:960px){
   .glance-grid{grid-template-columns:1fr 1fr}
   .ways,.contact-grid,.trainers,.faq{grid-template-columns:1fr}
-  .way{display:grid;grid-template-columns:38% 1fr}
+  .way{display:grid;grid-template-columns:38% 1fr;gap:22px}
   .way img{height:100%;aspect-ratio:auto}
+  .way .body{padding:0}
   .rates li.note{min-height:0}
   .loc-grid{grid-template-columns:1fr 1fr}
   .loc-grid .hours-panel{grid-column:1/-1}
@@ -240,35 +233,36 @@ footer a:hover{color:#fff}
   :root{--header-h:106px}
   .bar{flex-wrap:wrap;gap:0 12px;min-height:0;padding-top:8px}
   .brand img{width:38px;height:38px}
-  .header-actions{margin-left:auto}
-  .header-actions .btn{display:none}
+  .header-actions{display:none}
   .nav{order:3;width:calc(100% + 40px);margin:6px -20px 0;padding:0 14px 8px;overflow-x:auto;scrollbar-width:none;gap:2px}
   .nav::-webkit-scrollbar{display:none}
   .nav a{font-size:14.5px;padding:8px 11px}
   body{padding-bottom:68px;font-size:16.5px}
-  .quickbar{display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--card);border-top:1px solid var(--border);padding:9px 12px calc(9px + env(safe-area-inset-bottom));box-shadow:0 -6px 20px -8px #1c2a2433}
+  .quickbar{display:grid;grid-template-columns:1fr 1.700fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--card);border-top:1px solid var(--border);padding:9px 12px calc(9px + env(safe-area-inset-bottom));box-shadow:0 -6px 20px -8px #1c2a2433;transition:transform .2s,visibility 0s}
+  .quickbar.hide{transform:translateY(110%);visibility:hidden;transition:transform .2s,visibility 0s .2s}
   .quickbar a{white-space:nowrap;display:flex;align-items:center;justify-content:center;gap:7px;border-radius:999px;padding:12px 8px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid var(--pine);color:var(--pine)}
   .quickbar a.primary{background:var(--sunrise);border-color:var(--sunrise);color:#fff}
   .quickbar svg{width:17px;height:17px}
-  .hero-inner{padding:48px 0 112px}
+  .hero-inner{padding:48px 0 108px}
   .hero::after{background:linear-gradient(180deg,#16312ad9 0%,#16312ab3 100%)}
-  .section{padding:60px 0}
+  .section{padding:52px 0}
+  .section + .section > .wrap::before{margin-bottom:52px}
   .know ul{grid-template-columns:1fr}
   .car-meta{margin-left:0;width:100%}
 }
 @media (max-width:600px){
-  .glance-grid{gap:10px}
-  .fact{padding:15px}
+  .fact{padding:15px 16px}
   .fact .big{font-size:18.5px}
   .fact .small{font-size:14px}
-  .way{display:flex}
+  .ways{gap:40px}
+  .way{display:flex;gap:0}
   .way img{height:auto;aspect-ratio:4/3;object-position:var(--pos-m,var(--pos,50% 50%))}
-  .way .body{padding:16px;gap:5px}
-  .way h3{font-size:21px}
+  .way .body{padding:14px 0 0;gap:5px}
+  .way h3{font-size:22px}
   .way .desc{font-size:15px}
   .loc-grid,.row2{grid-template-columns:1fr}
-  .trainer{grid-template-columns:1fr}
-  .trainer img{min-height:0;aspect-ratio:16/10;object-position:50% 22%}
+  .trainer{grid-template-columns:1fr;gap:16px}
+  .trainer img{aspect-ratio:16/10;object-position:50% 22%}
   .panel{padding:20px}
   .hero .btn{width:100%}
 }
@@ -277,8 +271,6 @@ footer a:hover{color:#fff}
   .nav{width:calc(100% + 28px);margin-left:-14px;margin-right:-14px;padding-left:8px;padding-right:8px}
   .panel{padding:16px 14px}
   .rates .amt b{font-size:19px}
-  .quickbar{gap:6px;padding-left:8px;padding-right:8px}
-  .quickbar a{font-size:14px;gap:5px;padding-left:4px;padding-right:4px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
@@ -297,7 +289,7 @@ footer a:hover{color:#fff}
       <a href="#contact">Contact</a>
     </nav>
     <div class="header-actions">
-      <a class="btn btn-primary btn-sm" href="#contact">Book $25 assessment</a>
+      <a class="btn btn-ghost btn-sm" href="#contact">Book $25 assessment</a>
     </div>
   </div>
 </header>
@@ -319,41 +311,36 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<div class="glance" aria-label="At a glance">
-  <div class="wrap glance-grid">
-    <div class="fact">
-      <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 6.5c0-1.9-2.2-3-5-3s-5 1.100-5 3.500 2.200 3.200 5 4 5 1.600 5 4-2.200 3.500-5 3.500-5-1.100-5-3"/></svg>Prices</div>
-      <div class="big">From $180 a session</div>
-      <div class="small">Online coaching $147 a month. No contracts.</div>
-      <a class="more" href="#pricing">See all prices</a>
-    </div>
-    <div class="fact">
-      <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Where</div>
-      <div class="big">Boulder &amp; Louisville</div>
-      <div class="small">Or your home, park or trailhead. Or online.</div>
-      <a class="more" href="#locations">Addresses &amp; directions</a>
-    </div>
-    <div class="fact">
-      <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Hours</div>
-      <div class="big">5 AM to 7 PM</div>
-      <div class="small">Mon to Thu. Fri 5 AM to 6 PM. Sun 7:30 AM to 2 PM.</div>
-      <a class="more" href="#hours">Full hours</a>
-    </div>
-    <div class="fact">
-      <div class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.920v3a2 2 0 0 1-2.180 2 19.800 19.800 0 0 1-8.630-3.070 19.500 19.500 0 0 1-6-6A19.800 19.800 0 0 1 2.120 4.180 2 2 0 0 1 4.110 2h3a2 2 0 0 1 2 1.720c.130.960.360 1.900.700 2.810a2 2 0 0 1-.450 2.110L8.090 9.910a16 16 0 0 0 6 6l1.270-1.270a2 2 0 0 1 2.110-.450c.910.340 1.850.570 2.810.700A2 2 0 0 1 22 16.920Z"/></svg>Contact</div>
-      <div class="big"><a href="tel:+16095581000">(609) 558-1000</a></div>
-      <div class="small"><a href="mailto:chop.fitness.co@gmail.com">chop.fitness.co@gmail.com</a></div>
-      <a class="more" href="#contact">Book an assessment</a>
-    </div>
-  </div>
+<div class="glance">
+  <nav class="wrap" aria-label="At a glance"><div class="glance-grid">
+    <a class="fact" href="#pricing">
+      <span class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 6.5c0-1.9-2.2-3-5-3s-5 1.100-5 3.500 2.200 3.200 5 4 5 1.600 5 4-2.200 3.500-5 3.500-5-1.100-5-3"/></svg>Prices</span>
+      <span class="big">From $180 a session</span>
+      <span class="small">Online coaching $147 a month. No contracts.</span>
+    </a>
+    <a class="fact" href="#locations">
+      <span class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Where</span>
+      <span class="big">Boulder &amp; Louisville</span>
+      <span class="small">Or your home, park or trailhead. Or online.</span>
+    </a>
+    <a class="fact" href="#hours">
+      <span class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Hours</span>
+      <span class="big">5 AM to 7 PM</span>
+      <span class="small">Mon to Thu. Fri 5 AM to 6 PM. Sun 7:30 AM to 2 PM.</span>
+    </a>
+    <a class="fact" href="#contact">
+      <span class="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.920v3a2 2 0 0 1-2.180 2 19.800 19.800 0 0 1-8.630-3.070 19.500 19.500 0 0 1-6-6A19.800 19.800 0 0 1 2.120 4.180 2 2 0 0 1 4.110 2h3a2 2 0 0 1 2 1.720c.130.960.360 1.900.700 2.810a2 2 0 0 1-.450 2.110L8.090 9.910a16 16 0 0 0 6 6l1.270-1.270a2 2 0 0 1 2.110-.450c.910.340 1.850.570 2.810.700A2 2 0 0 1 22 16.920Z"/></svg>Contact</span>
+      <span class="big">(609) 558-1000</span>
+      <span class="small">chop.fitness.co@gmail.com</span>
+    </a>
+  </div></nav>
 </div>
 
 <!-- PRICES -->
 <section class="section" aria-labelledby="pricing-h">
   <div class="wrap">
     <div class="section-head" id="pricing">
-      <p class="eyebrow">Prices</p>
-      <h2 id="pricing-h">Three ways to train</h2>
+      <h2 id="pricing-h">Prices</h2>
       <p>Same coaching, same plan, wherever your week takes you. Mix them as your life changes.</p>
     </div>
 
@@ -413,7 +400,7 @@ footer a:hover{color:#fff}
         </ul>
       </div>
       <div class="side">
-        <a class="btn btn-primary" href="https://chop-fitness.com/pricing#build-your-plan">Buy a plan</a>
+        <a class="btn btn-outline" href="https://chop-fitness.com/pricing#build-your-plan">Buy a plan</a>
         <small>Secure checkout opens on chop-fitness.com.</small>
       </div>
     </div>
@@ -421,27 +408,26 @@ footer a:hover{color:#fff}
 </section>
 
 <!-- LOCATIONS & HOURS -->
-<section class="section alt" aria-labelledby="locations-h">
+<section class="section" aria-labelledby="locations-h">
   <div class="wrap">
     <div class="section-head" id="locations">
-      <p class="eyebrow">Locations &amp; hours</p>
-      <h2 id="locations-h">Where we train</h2>
+      <h2 id="locations-h">Locations &amp; hours</h2>
       <p>Two studios in Colorado. Or skip the drive: your coach comes to you, or you train online.</p>
     </div>
     <div class="loc-grid">
-      <div class="panel loc">
+      <div class="loc">
         <p class="tag">Studio</p>
         <h3>Boulder</h3>
         <address>4775 13th Street<br>Boulder, CO 80304</address>
         <a class="btn btn-outline btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=4775%2013th%20Street%2C%20Boulder%2C%20CO%2080304" target="_blank" rel="noopener">Get directions<span class="sr"> to the Boulder studio</span></a>
       </div>
-      <div class="panel loc">
+      <div class="loc">
         <p class="tag">Studio</p>
         <h3>Louisville</h3>
         <address>364 S. McCaslin Blvd.<br>Louisville, CO 80027</address>
         <a class="btn btn-outline btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=364%20S.%20McCaslin%20Blvd.%2C%20Louisville%2C%20CO%2080027" target="_blank" rel="noopener">Get directions<span class="sr"> to the Louisville studio</span></a>
       </div>
-      <div class="panel loc hours-panel" id="hours">
+      <div class="loc hours-panel" id="hours">
         <p class="tag">Hours</p>
         <table class="hours">
           <tbody>
@@ -459,8 +445,7 @@ footer a:hover{color:#fff}
 <section class="section" aria-labelledby="trainers-h">
   <div class="wrap">
     <div class="section-head" id="trainers">
-      <p class="eyebrow">Trainers</p>
-      <h2 id="trainers-h">Meet the trainers</h2>
+      <h2 id="trainers-h">Trainers</h2>
       <p>Real coaches who know your name, your goals, and your last workout.</p>
     </div>
     <div class="trainers">
@@ -499,11 +484,10 @@ footer a:hover{color:#fff}
 </section>
 
 <!-- REVIEWS -->
-<section class="section dark" aria-labelledby="reviews-h">
+<section class="section" aria-labelledby="reviews-h">
   <div class="wrap">
     <div class="section-head" id="reviews">
-      <p class="eyebrow">What members say</p>
-      <h2 id="reviews-h">Results talk</h2>
+      <h2 id="reviews-h">Reviews</h2>
     </div>
     <div class="carousel" role="group" aria-roledescription="carousel" aria-label="Member reviews">
       <div class="slides" id="review-slides" tabindex="0">
@@ -531,11 +515,10 @@ footer a:hover{color:#fff}
 </section>
 
 <!-- FAQ -->
-<section class="section sage" aria-labelledby="faq-h">
+<section class="section" aria-labelledby="faq-h">
   <div class="wrap">
     <div class="section-head" id="faq">
-      <p class="eyebrow">FAQ</p>
-      <h2 id="faq-h">Straight answers</h2>
+      <h2 id="faq-h">FAQ</h2>
     </div>
     <div class="faq">
       <div class="qa"><h3>Do I have to sign a contract?</h3><p>No. Sessions come in blocks of 10, 20, or 30 and stay good for 12 months. Online training is month to month, or yearly with two months free. If you step away, your progress, messages, and history stay saved, ready when you come back.</p></div>
@@ -549,8 +532,7 @@ footer a:hover{color:#fff}
 <section class="section" aria-labelledby="contact-h">
   <div class="wrap">
     <div class="section-head" id="contact">
-      <p class="eyebrow">Contact</p>
-      <h2 id="contact-h">Start with a plan</h2>
+      <h2 id="contact-h">Contact</h2>
       <p>Book a $25 assessment, or just call, text or email with a question.</p>
     </div>
     <div class="contact-grid">
@@ -593,16 +575,6 @@ footer a:hover{color:#fff}
         <p>Personal training in Boulder and Louisville, Colorado. In the studio, at your door, or online.</p>
       </div>
       <div>
-        <h3>On this page</h3>
-        <ul>
-          <li><a href="#pricing">Prices</a></li>
-          <li><a href="#locations">Locations &amp; hours</a></li>
-          <li><a href="#trainers">Trainers</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
         <h3>More</h3>
         <ul>
           <li><a href="https://chop-fitness.com/method">The Chop Method</a></li>
@@ -627,7 +599,6 @@ footer a:hover{color:#fff}
 
 <nav class="quickbar" aria-label="Quick actions">
   <a href="tel:+16095581000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.920v3a2 2 0 0 1-2.180 2 19.800 19.800 0 0 1-8.630-3.070 19.500 19.500 0 0 1-6-6A19.800 19.800 0 0 1 2.120 4.180 2 2 0 0 1 4.110 2h3a2 2 0 0 1 2 1.720c.130.960.360 1.900.700 2.810a2 2 0 0 1-.450 2.110L8.090 9.910a16 16 0 0 0 6 6l1.270-1.270a2 2 0 0 1 2.110-.450c.910.340 1.850.570 2.810.700A2 2 0 0 1 22 16.920Z"/></svg>Call</a>
-  <a href="#locations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Find us</a>
   <a class="primary" href="#contact">Book assessment</a>
 </nav>
 
@@ -683,6 +654,19 @@ var CONTACT_EMAIL = "chop.fitness.co@gmail.com";
       });
     }, { rootMargin: '-35% 0px -60% 0px' });
     document.querySelectorAll('main .section').forEach(function (s) { io.observe(s); });
+  }
+
+  // Phone bottom bar: step aside while the hero buttons or the form are on screen
+  var bar = document.querySelector('.quickbar');
+  if (bar && 'IntersectionObserver' in window) {
+    var onScreen = {};
+    var bio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { onScreen[e.target.id || 'hero'] = e.isIntersecting; });
+      var hide = onScreen.hero || onScreen['assessment-form'];
+      if (hide) bar.classList.add('hide'); else bar.classList.remove('hide');
+    });
+    bio.observe(document.querySelector('.hero .cta-row'));
+    bio.observe(document.getElementById('assessment-form'));
   }
 
   // Mark today's row in the hours table (Colorado time)
