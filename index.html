@@ -41,7 +41,7 @@ h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;letter-spacing:-.0
 p{margin:0}
 ul{margin:0;padding:0;list-style:none}
 :focus-visible{outline:3px solid var(--sandstone);outline-offset:2px;border-radius:6px}
-section[id]{scroll-margin-top:calc(var(--header-h) + 16px)}
+[id]{scroll-margin-top:calc(var(--header-h) + 20px)}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
 .skip{position:absolute;left:-999px;top:8px;background:var(--card);color:var(--ink);padding:10px 14px;border-radius:8px;z-index:100}
 .skip:focus{left:8px}
@@ -345,11 +345,11 @@ footer a:hover{color:#fff}
 </div>
 
 <!-- PRICES -->
-<section class="section" id="pricing">
+<section class="section" aria-labelledby="pricing-h">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" id="pricing">
       <p class="eyebrow">Prices</p>
-      <h2>Three ways to train</h2>
+      <h2 id="pricing-h">Three ways to train</h2>
       <p>Same coaching, same plan, wherever your week takes you. Mix them as your life changes.</p>
     </div>
 
@@ -431,9 +431,9 @@ footer a:hover{color:#fff}
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="section alt" id="how" aria-labelledby="how-h">
+<section class="section alt" aria-labelledby="how-h">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" id="how">
       <p class="eyebrow">How it works</p>
       <h2 id="how-h">There's a method to it</h2>
       <p>The same proven process is behind every result, in the studio, at your door, or online.</p>
@@ -448,11 +448,11 @@ footer a:hover{color:#fff}
 </section>
 
 <!-- LOCATIONS & HOURS -->
-<section class="section" id="locations">
+<section class="section" aria-labelledby="locations-h">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" id="locations">
       <p class="eyebrow">Locations &amp; hours</p>
-      <h2>Where we train</h2>
+      <h2 id="locations-h">Where we train</h2>
       <p>Two studios in Colorado. Or skip the drive: your coach comes to you, or you train online.</p>
     </div>
     <div class="loc-grid">
@@ -493,11 +493,11 @@ footer a:hover{color:#fff}
 </section>
 
 <!-- TRAINERS -->
-<section class="section alt" id="trainers">
+<section class="section alt" aria-labelledby="trainers-h">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" id="trainers">
       <p class="eyebrow">Trainers</p>
-      <h2>Meet the trainers</h2>
+      <h2 id="trainers-h">Meet the trainers</h2>
       <p>Real coaches who know your name, your goals, and your last workout.</p>
     </div>
     <div class="trainers">
@@ -543,9 +543,9 @@ footer a:hover{color:#fff}
 </section>
 
 <!-- REVIEWS -->
-<section class="section" id="reviews" aria-labelledby="reviews-h">
+<section class="section" aria-labelledby="reviews-h">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" id="reviews">
       <p class="eyebrow">What members say</p>
       <h2 id="reviews-h">Results talk</h2>
     </div>
@@ -562,11 +562,11 @@ footer a:hover{color:#fff}
 </section>
 
 <!-- FAQ -->
-<section class="section sage" id="faq">
+<section class="section sage" aria-labelledby="faq-h">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" id="faq">
       <p class="eyebrow">FAQ</p>
-      <h2>Straight answers</h2>
+      <h2 id="faq-h">Straight answers</h2>
     </div>
     <div class="faq">
       <div class="qa"><h3>Do I have to sign a contract?</h3><p>No. Sessions come in blocks of 10, 20, or 30 and stay good for 12 months. Online training is month to month, or yearly with two months free. If you step away, your progress, messages, and history stay saved, ready when you come back.</p></div>
@@ -580,11 +580,11 @@ footer a:hover{color:#fff}
 </section>
 
 <!-- CONTACT -->
-<section class="section" id="contact">
+<section class="section" aria-labelledby="contact-h">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" id="contact">
       <p class="eyebrow">Contact</p>
-      <h2>Start with a plan</h2>
+      <h2 id="contact-h">Start with a plan</h2>
       <p>Book a $25 assessment, or just call, text or email with a question.</p>
     </div>
     <div class="contact-grid">
@@ -722,7 +722,8 @@ var CONTACT_EMAIL = "chop.fitness.co@gmail.com";
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
         links.forEach(function (a) { a.classList.remove('active'); a.removeAttribute('aria-current'); });
-        var a = byId[e.target.id];
+        var head = e.target.querySelector('.section-head');
+        var a = head && byId[head.id];
         if (a) {
           a.classList.add('active'); a.setAttribute('aria-current', 'true');
           var nav = a.parentNode;
@@ -730,7 +731,7 @@ var CONTACT_EMAIL = "chop.fitness.co@gmail.com";
         }
       });
     }, { rootMargin: '-35% 0px -60% 0px' });
-    document.querySelectorAll('main section[id]').forEach(function (s) { io.observe(s); });
+    document.querySelectorAll('main .section').forEach(function (s) { io.observe(s); });
   }
 
   // Mark today's row in the hours table (Colorado time)
