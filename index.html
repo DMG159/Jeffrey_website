@@ -159,6 +159,23 @@ tr.today .today-badge{display:inline-block}
 .mascot img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none}
 .mascot strong{color:var(--ink)}
 
+/* before and after photos */
+.results{margin-bottom:52px}
+.res-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 32px) / 3);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.res-track::-webkit-scrollbar{display:none}
+.res-item{scroll-snap-align:start;display:block;padding:0;border:0;margin:0;background:#151515;border-radius:var(--radius);overflow:hidden;cursor:zoom-in;aspect-ratio:4/3}
+.res-item img{width:100%;height:100%;object-fit:contain;transition:transform .25s}
+.res-item:hover img{transform:scale(1.03)}
+.res-item:focus-visible{outline:3px solid var(--pine);outline-offset:2px}
+.res-bar{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:16px;font-size:15px;color:var(--muted)}
+.viewer{border:0;padding:16px;margin:0;background:transparent;color:var(--cream)}
+.viewer[open]{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;background:rgba(10,10,10,.95);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.viewer::backdrop{background:transparent}
+.viewer img{display:block;max-width:min(1100px,94vw);max-height:84vh;width:auto;height:auto;border-radius:10px}
+.viewer-bar{display:flex;justify-content:center;gap:12px;margin-top:12px}
+.viewer .car-btn{border-color:#faf6ef80;color:var(--cream)}
+.viewer .car-btn:hover{background:#faf6ef26;color:#fff}
+
 /* reviews carousel */
 .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
 .slides::-webkit-scrollbar{display:none}
@@ -247,8 +264,11 @@ footer a:hover{color:#fff}
   .section + .section > .wrap::before{margin-bottom:52px}
   .know ul{grid-template-columns:1fr}
   .car-meta{margin-left:0;width:100%}
+  .res-track{grid-auto-columns:calc((100% - 16px) / 2)}
 }
 @media (max-width:600px){
+  .res-track{grid-auto-columns:86%;gap:12px}
+  .results{margin-bottom:40px}
   .fact{padding:15px 16px}
   .fact .big{font-size:18.5px}
   .fact .small{font-size:14px}
@@ -487,7 +507,26 @@ footer a:hover{color:#fff}
 <section class="section" aria-labelledby="reviews-h">
   <div class="wrap">
     <div class="section-head" id="reviews">
-      <h2 id="reviews-h">Reviews</h2>
+      <h2 id="reviews-h">Results</h2>
+    </div>
+    <div class="results" role="group" aria-label="Client before and after photos">
+      <div class="res-track" id="results-track" tabindex="0">
+        <button class="res-item" type="button" data-full="assets/results/01.jpg" aria-label="Enlarge before and after photo 1 of 10"><img src="assets/results/01.jpg" alt="Chop Fitness client, before and after (1 of 10)" width="1100" height="824" loading="lazy" decoding="async"></button>
+        <button class="res-item" type="button" data-full="assets/results/02.jpg" aria-label="Enlarge before and after photo 2 of 10"><img src="assets/results/02.jpg" alt="Chop Fitness client, before and after (2 of 10)" width="1100" height="642" loading="lazy" decoding="async"></button>
+        <button class="res-item" type="button" data-full="assets/results/03.jpg" aria-label="Enlarge before and after photo 3 of 10"><img src="assets/results/03.jpg" alt="Chop Fitness client, before and after (3 of 10)" width="1100" height="727" loading="lazy" decoding="async"></button>
+        <button class="res-item" type="button" data-full="assets/results/04.jpg" aria-label="Enlarge before and after photo 4 of 10"><img src="assets/results/04.jpg" alt="Chop Fitness client, before and after (4 of 10)" width="1100" height="825" loading="lazy" decoding="async"></button>
+        <button class="res-item" type="button" data-full="assets/results/05.jpg" aria-label="Enlarge before and after photo 5 of 10"><img src="assets/results/05.jpg" alt="Chop Fitness client, before and after (5 of 10)" width="1100" height="718" loading="lazy" decoding="async"></button>
+        <button class="res-item" type="button" data-full="assets/results/06.jpg" aria-label="Enlarge before and after photo 6 of 10"><img src="assets/results/06.jpg" alt="Chop Fitness client, before and after (6 of 10)" width="1100" height="825" loading="lazy" decoding="async"></button>
+        <button class="res-item" type="button" data-full="assets/results/07.jpg" aria-label="Enlarge before and after photo 7 of 10"><img src="assets/results/07.jpg" alt="Chop Fitness client, before and after (7 of 10)" width="1100" height="825" loading="lazy" decoding="async"></button>
+        <button class="res-item" type="button" data-full="assets/results/08.jpg" aria-label="Enlarge before and after photo 8 of 10"><img src="assets/results/08.jpg" alt="Chop Fitness client, before and after (8 of 10)" width="1100" height="792" loading="lazy" decoding="async"></button>
+        <button class="res-item" type="button" data-full="assets/results/09.jpg" aria-label="Enlarge before and after photo 9 of 10"><img src="assets/results/09.jpg" alt="Chop Fitness client, before and after (9 of 10)" width="831" height="360" loading="lazy" decoding="async"></button>
+        <button class="res-item" type="button" data-full="assets/results/10.jpg" aria-label="Enlarge before and after photo 10 of 10"><img src="assets/results/10.jpg" alt="Chop Fitness client, before and after (10 of 10)" width="714" height="368" loading="lazy" decoding="async"></button>
+      </div>
+      <div class="res-bar">
+        <button class="car-btn" type="button" id="results-prev" aria-label="Previous photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+        <button class="car-btn" type="button" id="results-next" aria-label="Next photos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+        <span>Real clients. Tap a photo to enlarge.</span>
+      </div>
     </div>
     <div class="carousel" role="group" aria-roledescription="carousel" aria-label="Member reviews">
       <div class="slides" id="review-slides" tabindex="0">
@@ -566,6 +605,15 @@ footer a:hover{color:#fff}
 </section>
 
 </main>
+
+<dialog class="viewer" id="viewer" aria-label="Before and after photo">
+  <img id="viewer-img" src="" alt="">
+  <div class="viewer-bar">
+    <button class="car-btn" type="button" id="viewer-prev" aria-label="Previous photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+    <button class="car-btn" type="button" id="viewer-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <button class="car-btn" type="button" id="viewer-next" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+  </div>
+</dialog>
 
 <footer>
   <div class="wrap">
@@ -661,6 +709,41 @@ var CONTACT_EMAIL = "chop.fitness.co@gmail.com";
       if (tr.getAttribute('data-days').split(' ').indexOf(today) !== -1) tr.classList.add('today');
     });
   } catch (e) {}
+
+  // Before and after photos: scroll strip plus a full-size viewer
+  var track = document.getElementById('results-track');
+  if (track) {
+    var items = Array.prototype.slice.call(track.querySelectorAll('.res-item'));
+    var step = function () { return items[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 16); };
+    document.getElementById('results-prev').addEventListener('click', function () {
+      if (track.scrollLeft <= 4) track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+      else track.scrollBy({ left: -step(), behavior: 'smooth' });
+    });
+    document.getElementById('results-next').addEventListener('click', function () {
+      if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 4) track.scrollTo({ left: 0, behavior: 'smooth' });
+      else track.scrollBy({ left: step(), behavior: 'smooth' });
+    });
+    var viewer = document.getElementById('viewer'), vImg = document.getElementById('viewer-img'), shown = 0;
+    var show = function (i) {
+      shown = (i + items.length) % items.length;
+      var img = items[shown].querySelector('img');
+      vImg.src = items[shown].getAttribute('data-full'); vImg.alt = img.alt;
+    };
+    if (viewer && typeof viewer.showModal === 'function') {
+      items.forEach(function (b, i) { b.addEventListener('click', function () { show(i); viewer.showModal(); }); });
+      document.getElementById('viewer-prev').addEventListener('click', function () { show(shown - 1); });
+      document.getElementById('viewer-next').addEventListener('click', function () { show(shown + 1); });
+      document.getElementById('viewer-close').addEventListener('click', function () { viewer.close(); });
+      viewer.addEventListener('click', function (e) { if (e.target === viewer) viewer.close(); });
+      viewer.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') show(shown - 1);
+        if (e.key === 'ArrowRight') show(shown + 1);
+      });
+      viewer.addEventListener('close', function () { items[shown].focus(); });
+    } else {
+      items.forEach(function (b) { b.addEventListener('click', function () { window.open(b.getAttribute('data-full'), '_blank'); }); });
+    }
+  }
 
   // Reviews carousel: swipe, arrows or dots; no auto-advance
   var slides = document.getElementById('review-slides');
