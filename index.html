@@ -3,14 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chop Fitness | Personal training in Boulder and Louisville, Colorado</title>
-<meta name="description" content="Train anywhere with Chop Fitness: in the studio in Boulder or Louisville, Colorado, at your home, park or trailhead, or online. Prices, locations, hours, trainers and booking on one page.">
-<!-- PREVIEW ONLY: remove the next line when this page becomes the live site, so search engines can list it. -->
+<title>Personal Trainer in Boulder &amp; Louisville, CO | Chop Fitness</title>
+<meta name="description" content="Personal trainer in Boulder &amp; Louisville, CO. One-on-one training in our studios, at your home or trailhead, or online. Book a $25 assessment.">
+<!-- PREVIEW ONLY: remove the next line when this page goes live on chop-fitness.com, so search engines can list it. -->
 <meta name="robots" content="noindex">
-<meta property="og:title" content="Chop Fitness | Train anywhere">
-<meta property="og:description" content="Personal training in Boulder and Louisville, Colorado. In the studio, at your door, or online.">
-<meta property="og:image" content="assets/hero.jpg">
+<link rel="canonical" href="https://chop-fitness.com/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Chop Fitness">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://chop-fitness.com/">
+<meta property="og:title" content="Personal Trainer in Boulder &amp; Louisville, CO | Chop Fitness">
+<meta property="og:description" content="Personal trainer in Boulder &amp; Louisville, CO. One-on-one training in our studios, at your home or trailhead, or online. Book a $25 assessment.">
+<meta property="og:image" content="https://chop-fitness.com/assets/social.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Two hikers on a mountain trail toward snowy peaks">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Personal Trainer in Boulder &amp; Louisville, CO | Chop Fitness">
+<meta name="twitter:description" content="Personal trainer in Boulder &amp; Louisville, CO. One-on-one training in our studios, at your home or trailhead, or online. Book a $25 assessment.">
+<meta name="twitter:image" content="https://chop-fitness.com/assets/social.jpg">
 <meta name="theme-color" content="#16312a">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preload" as="image" href="assets/hero.jpg" fetchpriority="high">
@@ -72,10 +83,10 @@ ul{margin:0;padding:0;list-style:none}
 .hero{position:relative;background:var(--pine-deep);color:var(--cream);isolation:isolate}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;z-index:-2}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#16312af2 0%,#16312ab8 45%,#16312a40 100%)}
-.hero-inner{padding:72px 0 128px;max-width:640px}
+.hero-inner{padding:72px 0 128px;max-width:760px}
 .eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 .hero .eyebrow{color:var(--sandstone)}
-.hero h1{font-size:clamp(46px,8vw,84px);font-weight:800;margin:14px 0 16px}
+.hero h1{font-size:clamp(40px,6.400vw,72px);font-weight:800;margin:14px 0 16px;text-wrap:balance}
 .hero p.lead{font-size:20px;line-height:1.5;color:#faf6efe6;max-width:520px}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 
@@ -230,6 +241,20 @@ footer a{color:var(--cream)}
 footer a:hover{color:#fff}
 .legal{margin-top:24px;padding-top:20px;border-top:1px solid #ffffff1f;font-size:13.5px;color:#faf6ef99;display:flex;flex-direction:column;gap:6px}
 
+/* cookie consent */
+.consent{position:fixed;left:20px;bottom:20px;z-index:70;width:min(400px,calc(100% - 40px));background:var(--card);color:var(--ink);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-strong);padding:20px 22px}
+.consent[hidden]{display:none}
+.consent strong{display:block;font:700 19px/1.2 var(--display);margin-bottom:6px}
+.consent p{font-size:15px;line-height:1.5;color:#33413a}
+.consent-actions{display:flex;gap:10px;margin-top:16px}
+.consent-actions .btn{flex:1}
+.consent-yes{background:var(--pine);color:var(--cream)}
+.consent-yes:hover{background:var(--pine-deep);color:#fff}
+.consent-no{border-color:var(--pine);color:var(--pine);background:transparent}
+.consent-no:hover{background:var(--sage-soft)}
+.linklike{background:none;border:0;padding:0;font:inherit;color:var(--cream);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.linklike:hover{color:#fff}
+
 /* mobile quick bar */
 .quickbar{display:none}
 
@@ -254,6 +279,8 @@ footer a:hover{color:#fff}
   .nav a{font-size:14.5px;padding:8px 11px}
   body{padding-bottom:68px;font-size:16.5px}
   .quickbar{display:grid;grid-template-columns:1fr 1.700fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--card);border-top:1px solid var(--border);padding:9px 12px calc(9px + env(safe-area-inset-bottom));box-shadow:0 -6px 20px -8px #1c2a2433;transition:transform .2s,visibility 0s}
+  .consent{left:12px;right:12px;width:auto;bottom:calc(12px + env(safe-area-inset-bottom))}
+  .consent-open .quickbar{transform:translateY(110%);visibility:hidden}
   .quickbar.hide{transform:translateY(110%);visibility:hidden;transition:transform .2s,visibility 0s .2s}
   .quickbar a{white-space:nowrap;display:flex;align-items:center;justify-content:center;gap:7px;border-radius:999px;padding:12px 8px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid var(--pine);color:var(--pine)}
   .quickbar a.primary{background:var(--sunrise);border-color:var(--sunrise);color:#fff}
@@ -322,9 +349,9 @@ footer a:hover{color:#fff}
   <img class="hero-img" src="assets/hero.jpg" alt="Two hikers with backpacks walking a mountain trail toward snowy, jagged peaks" width="1800" height="1201">
   <div class="wrap">
     <div class="hero-inner">
-      <p class="eyebrow">Personal training, Boulder and Louisville, Colorado</p>
-      <h1>Train anywhere.</h1>
-      <p class="lead">Real coaching that fits your life: in the studio, at your door, or wherever you are.</p>
+      <p class="eyebrow">Chop Fitness &middot; Train anywhere</p>
+      <h1>Personal training in Boulder &amp; Louisville, CO</h1>
+      <p class="lead">One-on-one coaching in our studios, in your home or at the trailhead, or online. Injury-aware, no contracts.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#contact">Book your $25 assessment</a>
         <a class="btn btn-ghost" href="#pricing">See prices</a>
@@ -624,11 +651,20 @@ footer a:hover{color:#fff}
       </div>
     </div>
     <div class="legal">
-      <span>&copy; 2026 Chop Fitness. All rights reserved. <a href="https://chop-fitness.com/privacy">Privacy Policy</a> &middot; <a href="https://chop-fitness.com/terms">Terms of Service</a></span>
+      <span>&copy; 2026 Chop Fitness. All rights reserved. <a href="https://chop-fitness.com/privacy">Privacy Policy</a> &middot; <a href="https://chop-fitness.com/terms">Terms of Service</a><span id="cookie-settings-wrap" hidden> &middot; <button class="linklike" type="button" id="cookie-settings">Cookie settings</button></span></span>
       <span>Chop Fitness provides fitness coaching. We are not a substitute for medical care. For injuries or medical conditions, consult a licensed physician or physical therapist.</span>
     </div>
   </div>
 </footer>
+
+<div class="consent" id="consent" role="region" aria-label="Cookie consent" hidden>
+  <strong>Cookies</strong>
+  <p>We'd like to use Google Analytics cookies to see how people find and use this page. Nothing is tracked unless you accept. <a href="https://chop-fitness.com/privacy">Privacy Policy</a></p>
+  <div class="consent-actions">
+    <button class="btn btn-sm consent-no" type="button" id="consent-decline">Decline</button>
+    <button class="btn btn-sm consent-yes" type="button" id="consent-accept">Accept</button>
+  </div>
+</div>
 
 <nav class="quickbar" aria-label="Quick actions">
   <a href="tel:+16095581000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.200" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.920v3a2 2 0 0 1-2.180 2 19.800 19.800 0 0 1-8.630-3.070 19.500 19.500 0 0 1-6-6A19.800 19.800 0 0 1 2.120 4.180 2 2 0 0 1 4.110 2h3a2 2 0 0 1 2 1.720c.130.960.360 1.900.700 2.810a2 2 0 0 1-.450 2.110L8.090 9.910a16 16 0 0 0 6 6l1.270-1.270a2 2 0 0 1 2.110-.450c.910.340 1.850.570 2.810.700A2 2 0 0 1 22 16.920Z"/></svg>Call</a>
@@ -637,22 +673,197 @@ footer a:hover{color:#fff}
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "HealthClub",
-  "name": "Chop Fitness",
-  "description": "Personal training in Boulder and Louisville, Colorado. In the studio, at your door, or online.",
-  "telephone": "+1-609-558-1000",
-  "email": "chop.fitness.co@gmail.com",
-  "priceRange": "$147 to $5,400",
-  "location": [
-    {"@type": "Place", "name": "Chop Fitness Boulder", "address": {"@type": "PostalAddress", "streetAddress": "4775 13th Street", "addressLocality": "Boulder", "addressRegion": "CO", "postalCode": "80304", "addressCountry": "US"}},
-    {"@type": "Place", "name": "Chop Fitness Louisville", "address": {"@type": "PostalAddress", "streetAddress": "364 S. McCaslin Blvd.", "addressLocality": "Louisville", "addressRegion": "CO", "postalCode": "80027", "addressCountry": "US"}}
-  ],
-  "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "05:00", "closes": "19:00"},
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "05:00", "closes": "18:00"},
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "07:30", "closes": "14:00"}
-  ]
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://chop-fitness.com/#org",
+   "name": "Chop Fitness",
+   "url": "https://chop-fitness.com/",
+   "logo": "https://chop-fitness.com/assets/logo.png",
+   "image": "https://chop-fitness.com/assets/social.jpg",
+   "description": "Personal training in Boulder and Louisville, Colorado: in the studio, in your home or at the trailhead, or online.",
+   "telephone": "+1-609-558-1000",
+   "email": "chop.fitness.co@gmail.com",
+   "areaServed": [
+    {
+     "@type": "City",
+     "name": "Boulder, CO"
+    },
+    {
+     "@type": "City",
+     "name": "Louisville, CO"
+    }
+   ],
+   "founder": {
+    "@type": "Person",
+    "name": "Jeffrey Heckendorn"
+   },
+   "employee": [
+    {
+     "@type": "Person",
+     "name": "Jeffrey Heckendorn",
+     "jobTitle": "Owner, master trainer"
+    },
+    {
+     "@type": "Person",
+     "name": "Hailey Nardone",
+     "jobTitle": "Strength coach"
+    }
+   ],
+   "department": [
+    {
+     "@id": "https://chop-fitness.com/#boulder"
+    },
+    {
+     "@id": "https://chop-fitness.com/#louisville"
+    }
+   ],
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Personal training",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "name": "Assessment",
+      "price": "25",
+      "priceCurrency": "USD"
+     },
+     {
+      "@type": "Offer",
+      "name": "10 personal training sessions",
+      "price": "2000",
+      "priceCurrency": "USD"
+     },
+     {
+      "@type": "Offer",
+      "name": "20 personal training sessions",
+      "price": "3600",
+      "priceCurrency": "USD"
+     },
+     {
+      "@type": "Offer",
+      "name": "30 personal training sessions",
+      "price": "5400",
+      "priceCurrency": "USD"
+     },
+     {
+      "@type": "Offer",
+      "name": "Online training, monthly",
+      "price": "147",
+      "priceCurrency": "USD"
+     },
+     {
+      "@type": "Offer",
+      "name": "Online training, yearly",
+      "price": "1470",
+      "priceCurrency": "USD"
+     }
+    ]
+   }
+  },
+  {
+   "@type": "ExerciseGym",
+   "@id": "https://chop-fitness.com/#boulder",
+   "name": "Chop Fitness Boulder",
+   "url": "https://chop-fitness.com/",
+   "image": "https://chop-fitness.com/assets/studio.jpg",
+   "telephone": "+1-609-558-1000",
+   "email": "chop.fitness.co@gmail.com",
+   "priceRange": "$$",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "4775 13th Street",
+    "addressLocality": "Boulder",
+    "addressRegion": "CO",
+    "postalCode": "80304",
+    "addressCountry": "US"
+   },
+   "openingHoursSpecification": [
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday"
+     ],
+     "opens": "05:00",
+     "closes": "19:00"
+    },
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": "Friday",
+     "opens": "05:00",
+     "closes": "18:00"
+    },
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": "Sunday",
+     "opens": "07:30",
+     "closes": "14:00"
+    }
+   ],
+   "parentOrganization": {
+    "@id": "https://chop-fitness.com/#org"
+   }
+  },
+  {
+   "@type": "ExerciseGym",
+   "@id": "https://chop-fitness.com/#louisville",
+   "name": "Chop Fitness Louisville",
+   "url": "https://chop-fitness.com/",
+   "image": "https://chop-fitness.com/assets/studio.jpg",
+   "telephone": "+1-609-558-1000",
+   "email": "chop.fitness.co@gmail.com",
+   "priceRange": "$$",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "364 S. McCaslin Blvd.",
+    "addressLocality": "Louisville",
+    "addressRegion": "CO",
+    "postalCode": "80027",
+    "addressCountry": "US"
+   },
+   "openingHoursSpecification": [
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday"
+     ],
+     "opens": "05:00",
+     "closes": "19:00"
+    },
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": "Friday",
+     "opens": "05:00",
+     "closes": "18:00"
+    },
+    {
+     "@type": "OpeningHoursSpecification",
+     "dayOfWeek": "Sunday",
+     "opens": "07:30",
+     "closes": "14:00"
+    }
+   ],
+   "parentOrganization": {
+    "@id": "https://chop-fitness.com/#org"
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://chop-fitness.com/#website",
+   "url": "https://chop-fitness.com/",
+   "name": "Chop Fitness",
+   "publisher": {
+    "@id": "https://chop-fitness.com/#org"
+   }
+  }
+ ]
 }
 </script>
 
@@ -667,7 +878,57 @@ footer a:hover{color:#fff}
 var FORM_ENDPOINT = "";
 var CONTACT_EMAIL = "chop.fitness.co@gmail.com";
 
+/* ------------------------------------------------------------------
+   GOOGLE ANALYTICS SETTING
+   Paste the GA4 measurement ID (it looks like "G-ABC123XYZ") between
+   the quotes. While it is empty, there is no analytics and no cookie
+   banner. Once it is set, visitors see the banner, and analytics only
+   loads after they click Accept.
+------------------------------------------------------------------- */
+var GA_MEASUREMENT_ID = "";
+
 (function () {
+  // Cookie consent and Google Analytics (loads only after Accept)
+  var CONSENT_KEY = 'chop-analytics-consent', gaLoaded = false;
+  var banner = document.getElementById('consent');
+  function getConsent() { try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; } }
+  function setConsent(v) { try { localStorage.setItem(CONSENT_KEY, v); } catch (e) {} }
+  function analyticsOn() { return gaLoaded && !window['ga-disable-' + GA_MEASUREMENT_ID]; }
+  function loadGA() {
+    window['ga-disable-' + GA_MEASUREMENT_ID] = false;
+    if (gaLoaded) return;
+    gaLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+    window.gtag('js', new Date());
+    window.gtag('config', GA_MEASUREMENT_ID);
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_MEASUREMENT_ID);
+    document.head.appendChild(s);
+  }
+  function stopGA() {
+    window['ga-disable-' + GA_MEASUREMENT_ID] = true;
+    var parts = location.hostname.split('.'), domains = [''];
+    for (var i = 0; i < parts.length - 1; i++) domains.push('; domain=.' + parts.slice(i).join('.'));
+    document.cookie.split(';').forEach(function (c) {
+      var name = c.split('=')[0].trim();
+      if (/^_ga/.test(name)) domains.forEach(function (d) { document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + d; });
+    });
+  }
+  function sendEvent(name, params) { if (analyticsOn()) window.gtag('event', name, params || {}); }
+  function openBanner() { banner.hidden = false; document.documentElement.classList.add('consent-open'); }
+  function closeBanner() { banner.hidden = true; document.documentElement.classList.remove('consent-open'); }
+  if (GA_MEASUREMENT_ID && banner) {
+    document.getElementById('cookie-settings-wrap').hidden = false;
+    var choice = getConsent();
+    if (choice === 'granted') loadGA(); else if (choice !== 'denied') openBanner();
+    document.getElementById('consent-accept').addEventListener('click', function () { setConsent('granted'); closeBanner(); loadGA(); });
+    document.getElementById('consent-decline').addEventListener('click', function () { setConsent('denied'); closeBanner(); if (gaLoaded) stopGA(); });
+    document.getElementById('cookie-settings').addEventListener('click', openBanner);
+  }
+
   // Highlight the menu item for the section in view
   var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
   var byId = {};
@@ -724,20 +985,20 @@ var CONTACT_EMAIL = "chop.fitness.co@gmail.com";
       else track.scrollBy({ left: step(), behavior: 'smooth' });
     });
     var viewer = document.getElementById('viewer'), vImg = document.getElementById('viewer-img'), shown = 0;
-    var show = function (i) {
+    var showPhoto = function (i) {
       shown = (i + items.length) % items.length;
       var img = items[shown].querySelector('img');
       vImg.src = items[shown].getAttribute('data-full'); vImg.alt = img.alt;
     };
     if (viewer && typeof viewer.showModal === 'function') {
-      items.forEach(function (b, i) { b.addEventListener('click', function () { show(i); viewer.showModal(); }); });
-      document.getElementById('viewer-prev').addEventListener('click', function () { show(shown - 1); });
-      document.getElementById('viewer-next').addEventListener('click', function () { show(shown + 1); });
+      items.forEach(function (b, i) { b.addEventListener('click', function () { showPhoto(i); viewer.showModal(); }); });
+      document.getElementById('viewer-prev').addEventListener('click', function () { showPhoto(shown - 1); });
+      document.getElementById('viewer-next').addEventListener('click', function () { showPhoto(shown + 1); });
       document.getElementById('viewer-close').addEventListener('click', function () { viewer.close(); });
       viewer.addEventListener('click', function (e) { if (e.target === viewer) viewer.close(); });
       viewer.addEventListener('keydown', function (e) {
-        if (e.key === 'ArrowLeft') show(shown - 1);
-        if (e.key === 'ArrowRight') show(shown + 1);
+        if (e.key === 'ArrowLeft') showPhoto(shown - 1);
+        if (e.key === 'ArrowRight') showPhoto(shown + 1);
       });
       viewer.addEventListener('close', function () { items[shown].focus(); });
     } else {
@@ -783,6 +1044,13 @@ var CONTACT_EMAIL = "chop.fitness.co@gmail.com";
   function show(kind, html) { status.className = 'form-status ' + kind; status.innerHTML = html; }
   var fallback = 'Please call or text <a href="tel:+16095581000">(609) 558-1000</a> or email <a href="mailto:' + CONTACT_EMAIL + '">' + CONTACT_EMAIL + '</a>.';
 
+  // Form tracking: form_start on first use, generate_lead when a request is sent
+  var started = false;
+  form.addEventListener('focusin', function () {
+    if (started) return; started = true;
+    sendEvent('form_start', { form_id: 'assessment' });
+  });
+
   form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     if (!form.checkValidity()) { form.reportValidity(); return; }
@@ -792,6 +1060,7 @@ var CONTACT_EMAIL = "chop.fitness.co@gmail.com";
     if (!FORM_ENDPOINT) {
       var body = 'Name: ' + data.get('name') + '\nEmail or phone: ' + data.get('contact') +
         '\nGoal and best day/time: ' + (data.get('message') || '-');
+      sendEvent('assessment_email_opened', { form_id: 'assessment' });
       window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent('$25 assessment request') + '&body=' + encodeURIComponent(body);
       show('ok', 'Your email app should open with your request ready to send. If it does not, ' + fallback.charAt(0).toLowerCase() + fallback.slice(1));
       return;
@@ -803,10 +1072,12 @@ var CONTACT_EMAIL = "chop.fitness.co@gmail.com";
       .then(function (r) { if (!r.ok) throw new Error(r.status); })
       .then(function () {
         form.reset();
+        sendEvent('generate_lead', { form_id: 'assessment', currency: 'USD', value: 25 });
         show('ok', 'Thanks, your request is in. Jeff will call or text you to lock in a time.');
         btn.textContent = 'Request sent';
       })
       .catch(function () {
+        sendEvent('form_error', { form_id: 'assessment' });
         show('err', 'Sorry, that did not send. ' + fallback);
         btn.disabled = false; btn.textContent = 'Request my assessment';
       });
