@@ -903,15 +903,15 @@ var GA_MEASUREMENT_ID = "";
    button that goes to chop-fitness.com.
 ------------------------------------------------------------------- */
 var PAYMENT_LINKS = {
-  "studio-10": "https://buy.stripe.com/test_dRmbIU5OV6K9gUc0gT2wU01",      // In the studio, 10 sessions, $2,000
-  "studio-20": "https://buy.stripe.com/test_aFafZaa5b4C16fy0gT2wU02",      // In the studio, 20 sessions, $3,600
-  "studio-30": "https://buy.stripe.com/test_eVq14gcdj7Od33m6Fh2wU03",      // In the studio, 30 sessions, $5,400
-  "home-10": "https://buy.stripe.com/test_5kQ5kw4KR2tT0VeaVx2wU04",        // We come to you, 10 sessions, $2,000
-  "home-20": "https://buy.stripe.com/test_5kQ00cb9f1pPavO4x92wU05",        // We come to you, 20 sessions, $3,600
-  "home-30": "https://buy.stripe.com/test_bJeeV6917d8x7jCd3F2wU06",        // We come to you, 30 sessions, $5,400
-  "online-monthly": "https://buy.stripe.com/test_cNi14ga5b4C1cDWe7J2wU07", // Online coaching, $147 a month (subscription)
-  "online-yearly": "https://buy.stripe.com/test_7sY5kw6SZ3xX8nG5Bd2wU08",  // Online coaching, $1,470 a year (subscription)
-  "assessment": "https://buy.stripe.com/test_cNi3co2CJ2tT8nG3t52wU09"      // $25 assessment
+  "studio-10": "https://buy.stripe.com/8x2dR2gtz2tTeM4bZB2wU00",      // In the studio, 10 sessions, $2,000
+  "studio-20": "https://buy.stripe.com/dRmbIU5OV6K9gUc0gT2wU01",      // In the studio, 20 sessions, $3,600
+  "studio-30": "https://buy.stripe.com/aFafZaa5b4C16fy0gT2wU02",      // In the studio, 30 sessions, $5,400
+  "home-10": "https://buy.stripe.com/eVq14gcdj7Od33m6Fh2wU03",        // We come to you, 10 sessions, $2,000
+  "home-20": "https://buy.stripe.com/5kQ5kw4KR2tT0VeaVx2wU04",        // We come to you, 20 sessions, $3,600
+  "home-30": "https://buy.stripe.com/5kQ00cb9f1pPavO4x92wU05",        // We come to you, 30 sessions, $5,400
+  "online-monthly": "https://buy.stripe.com/bJeeV6917d8x7jCd3F2wU06", // Online coaching, $147 a month (subscription)
+  "online-yearly": "https://buy.stripe.com/cNi14ga5b4C1cDWe7J2wU07",  // Online coaching, $1,470 a year (subscription)
+  "assessment": "https://buy.stripe.com/7sY5kw6SZ3xX8nG5Bd2wU08"      // $25 assessment
 };
 
 (function () {
@@ -1088,7 +1088,7 @@ var PAYMENT_LINKS = {
   });
   if (anyPay) {
     var old = document.getElementById('old-checkout');
-    if (old) old.innerHTML = '<small class="pay-note">Payments are handled securely by Stripe. The $25 assessment fee comes off your first package: ask Jeff for your code.</small>';
+    if (old) old.innerHTML = '<small class="pay-note">Payments are handled securely by Stripe.</small>';
   }
 
   // Assessment form
