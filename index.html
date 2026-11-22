@@ -127,6 +127,10 @@ ul{margin:0;padding:0;list-style:none}
 .rates .amt{display:flex;align-items:center;gap:8px;font-variant-numeric:tabular-nums;white-space:nowrap}
 .rates .amt b{font:700 21px/1 var(--display)}
 .rates li.note{font-size:14.5px;color:var(--muted);min-height:62px}
+.rates .buy{padding:8px 16px;font-size:14.5px}
+.pay-note{font-size:14px;color:var(--muted);margin-top:10px}
+.pay-now{margin-top:18px;padding-top:16px;border-top:1px solid var(--border);font-size:15px;color:var(--muted)}
+.pay-now span{display:block;margin-bottom:10px}
 .save{display:inline-block;background:var(--sage-soft);color:var(--pine);font-weight:700;font-size:13px;padding:3px 8px;border-radius:999px;white-space:nowrap}
 .know{margin-top:36px;padding-top:28px;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr auto;gap:24px 40px;align-items:center}
 .know h3{font-size:20px;font-weight:700;margin-bottom:12px}
@@ -320,6 +324,8 @@ footer a:hover{color:#fff}
   .nav{width:calc(100% + 28px);margin-left:-14px;margin-right:-14px;padding-left:8px;padding-right:8px}
   .panel{padding:16px 14px}
   .rates .amt b{font-size:19px}
+  .rates li[data-pay]{flex-wrap:wrap}
+  .rates .amt{flex-wrap:wrap;justify-content:flex-end}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
@@ -402,9 +408,9 @@ footer a:hover{color:#fff}
           <p class="where">Boulder or Louisville, Colorado</p>
           <p class="desc">For people who like a dedicated space, real equipment, and a coach beside them. Train with Jeffrey one on one.</p>
           <ul class="rates">
-            <li><span class="what"><b>10 sessions</b><span>$200 a session</span></span><span class="amt"><b>$2,000</b></span></li>
-            <li><span class="what"><b>20 sessions</b><span>$180 a session</span></span><span class="amt"><span class="save">Save $400</span><b>$3,600</b></span></li>
-            <li><span class="what"><b>30 sessions</b><span>$180 a session</span></span><span class="amt"><span class="save">Save $600</span><b>$5,400</b></span></li>
+            <li data-pay="studio-10"><span class="what"><b>10 sessions</b><span>$200 a session</span></span><span class="amt"><b>$2,000</b></span></li>
+            <li data-pay="studio-20"><span class="what"><b>20 sessions</b><span>$180 a session</span></span><span class="amt"><span class="save">Save $400</span><b>$3,600</b></span></li>
+            <li data-pay="studio-30"><span class="what"><b>30 sessions</b><span>$180 a session</span></span><span class="amt"><span class="save">Save $600</span><b>$5,400</b></span></li>
           </ul>
         </div>
       </li>
@@ -416,9 +422,9 @@ footer a:hover{color:#fff}
           <p class="where">Your home, backyard, park, or trailhead</p>
           <p class="desc">For busy schedules and people who train best on their own ground. Your coach brings the session to you.</p>
           <ul class="rates">
-            <li><span class="what"><b>10 sessions</b><span>$200 a session</span></span><span class="amt"><b>$2,000</b></span></li>
-            <li><span class="what"><b>20 sessions</b><span>$180 a session</span></span><span class="amt"><span class="save">Save $400</span><b>$3,600</b></span></li>
-            <li><span class="what"><b>30 sessions</b><span>$180 a session</span></span><span class="amt"><span class="save">Save $600</span><b>$5,400</b></span></li>
+            <li data-pay="home-10"><span class="what"><b>10 sessions</b><span>$200 a session</span></span><span class="amt"><b>$2,000</b></span></li>
+            <li data-pay="home-20"><span class="what"><b>20 sessions</b><span>$180 a session</span></span><span class="amt"><span class="save">Save $400</span><b>$3,600</b></span></li>
+            <li data-pay="home-30"><span class="what"><b>30 sessions</b><span>$180 a session</span></span><span class="amt"><span class="save">Save $600</span><b>$5,400</b></span></li>
           </ul>
         </div>
       </li>
@@ -430,8 +436,8 @@ footer a:hover{color:#fff}
           <p class="where">On your phone, anywhere</p>
           <p class="desc">For travelers and self-starters. Digital coaching, meal planning, and weekly check-ins with your coach.</p>
           <ul class="rates">
-            <li><span class="what"><b>Monthly</b><span>Month to month</span></span><span class="amt"><b>$147</b></span></li>
-            <li><span class="what"><b>Yearly</b><span>12 months</span></span><span class="amt"><span class="save">2 months free</span><b>$1,470</b></span></li>
+            <li data-pay="online-monthly"><span class="what"><b>Monthly</b><span>Month to month</span></span><span class="amt"><b>$147</b></span></li>
+            <li data-pay="online-yearly"><span class="what"><b>Yearly</b><span>12 months</span></span><span class="amt"><span class="save">2 months free</span><b>$1,470</b></span></li>
             <li class="note">Buy it on its own or add it to any session block.</li>
           </ul>
         </div>
@@ -448,7 +454,7 @@ footer a:hover{color:#fff}
           <li>Referred by a member? 10% off a 10-session block, for first-time customers.</li>
         </ul>
       </div>
-      <div class="side">
+      <div class="side" id="old-checkout">
         <a class="btn btn-outline" href="https://chop-fitness.com/pricing#build-your-plan">Buy a plan</a>
         <small>Secure checkout opens on chop-fitness.com.</small>
       </div>
@@ -615,6 +621,7 @@ footer a:hover{color:#fff}
         <p class="note">This isn't a confirmed appointment. Jeff will call or text you to lock in a time.</p>
         <button class="btn btn-primary" type="submit">Request my assessment</button>
         <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+        <p class="pay-now" data-pay="assessment" hidden>Want to skip the back and forth? <span>Pay the $25 now and Jeff will reach out to schedule.</span></p>
       </form>
 
       <div class="reach">
@@ -887,6 +894,26 @@ var CONTACT_EMAIL = "chop.fitness.co@gmail.com";
 ------------------------------------------------------------------- */
 var GA_MEASUREMENT_ID = "";
 
+/* ------------------------------------------------------------------
+   STRIPE PAYMENT LINKS
+   In Stripe, create a Payment Link for each item and paste its address
+   (it looks like "https://buy.stripe.com/abc123") between the quotes.
+   A "Buy" button appears next to an item only once its link is filled
+   in. While every link is empty, the page keeps the old "Buy a plan"
+   button that goes to chop-fitness.com.
+------------------------------------------------------------------- */
+var PAYMENT_LINKS = {
+  "studio-10": "",      // In the studio, 10 sessions, $2,000
+  "studio-20": "",      // In the studio, 20 sessions, $3,600
+  "studio-30": "",      // In the studio, 30 sessions, $5,400
+  "home-10": "",        // We come to you, 10 sessions, $2,000
+  "home-20": "",        // We come to you, 20 sessions, $3,600
+  "home-30": "",        // We come to you, 30 sessions, $5,400
+  "online-monthly": "", // Online coaching, $147 a month (subscription)
+  "online-yearly": "",  // Online coaching, $1,470 a year (subscription)
+  "assessment": ""      // $25 assessment
+};
+
 (function () {
   // Cookie consent and Google Analytics (loads only after Accept)
   var CONSENT_KEY = 'chop-analytics-consent', gaLoaded = false;
@@ -1036,6 +1063,32 @@ var GA_MEASUREMENT_ID = "";
     });
     window.addEventListener('resize', function () { slides.scrollLeft = current * slides.clientWidth; });
     mark();
+  }
+
+  // Stripe payment links: add a Buy button to each item that has a link
+  var anyPay = false;
+  document.querySelectorAll('[data-pay]').forEach(function (el) {
+    var key = el.getAttribute('data-pay');
+    var url = PAYMENT_LINKS[key];
+    if (!url || !/^https:\/\/(buy\.stripe\.com|checkout\.stripe\.com)\//.test(url)) return;
+    anyPay = true;
+    var priceEl = el.querySelector('.amt b');
+    var value = key === 'assessment' ? 25 : priceEl ? Number(priceEl.textContent.replace(/[^0-9.]/g, '')) : 0;
+    var label = key === 'assessment' ? '$25 assessment' : (el.closest('.way').querySelector('h3').textContent + ', ' + el.querySelector('.what b').textContent);
+    var a = document.createElement('a');
+    a.className = key === 'assessment' ? 'btn btn-outline' : 'btn btn-primary buy';
+    a.href = url;
+    a.textContent = key === 'assessment' ? 'Pay $25 now' : 'Buy';
+    if (key !== 'assessment') a.setAttribute('aria-label', 'Buy ' + label + ' for $' + value.toLocaleString('en-US'));
+    a.addEventListener('click', function () {
+      sendEvent('begin_checkout', { currency: 'USD', value: value, items: [{ item_id: key, item_name: label, price: value, quantity: 1 }] });
+    });
+    (el.querySelector('.amt') || el).appendChild(a);
+    el.hidden = false;
+  });
+  if (anyPay) {
+    var old = document.getElementById('old-checkout');
+    if (old) old.innerHTML = '<small class="pay-note">Payments are handled securely by Stripe. The $25 assessment fee comes off your first package: ask Jeff for your code.</small>';
   }
 
   // Assessment form

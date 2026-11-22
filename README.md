@@ -28,6 +28,41 @@ The "Book your $25 assessment" form needs a form service to deliver requests to 
 
 Until that is done, the form opens the visitor's email app with their answers filled in.
 
+## Turn on Stripe payments
+
+Clients pay on Stripe's own secure checkout page, so the site needs no server and no Stripe keys.
+Jeffrey makes one Payment Link per item in his Stripe dashboard (stripe.com or the Stripe app),
+and each link is pasted into `index.html`.
+
+1. In Stripe, go to **Product catalog** and add these products:
+
+   | Item | Price | Type |
+   | --- | --- | --- |
+   | In the studio, 10 sessions | $2,000 | One-off |
+   | In the studio, 20 sessions | $3,600 | One-off |
+   | In the studio, 30 sessions | $5,400 | One-off |
+   | We come to you, 10 sessions | $2,000 | One-off |
+   | We come to you, 20 sessions | $3,600 | One-off |
+   | We come to you, 30 sessions | $5,400 | One-off |
+   | Online coaching, monthly | $147 | Recurring, every month |
+   | Online coaching, yearly | $1,470 | Recurring, every year |
+   | $25 assessment | $25 | One-off |
+
+2. For each product, click **Create payment link**. In the link's options:
+   - Turn on **Collect customers' phone numbers**, so Jeff can text to schedule.
+   - Optionally turn on **Allow promotion codes**, for the $25 assessment credit and the
+     10% referral discount (make the codes under **Product catalog > Coupons**).
+3. Copy each link (it looks like `https://buy.stripe.com/abc123`).
+4. In `index.html`, find `var PAYMENT_LINKS` and paste each link between the quotes on its line.
+
+A "Buy" button appears next to each price whose link is filled in. Once any link is set, the old
+"Buy a plan" button (which goes to chop-fitness.com) is replaced with a short Stripe note.
+Clients on a subscription can cancel through the link in their Stripe receipt emails
+(turn on the **Customer portal** under **Settings > Billing**).
+
+Clicking a Buy button sends a `begin_checkout` event to Google Analytics, when analytics is on
+and the visitor accepted cookies.
+
 ## Turn on Google Analytics
 
 1. Whoever owns the business Google account creates a GA4 property at analytics.google.com
