@@ -658,7 +658,7 @@ footer a:hover{color:#fff}
       </div>
     </div>
     <div class="legal">
-      <span>&copy; 2026 Chop Fitness. All rights reserved. <a href="https://chop-fitness.com/privacy">Privacy Policy</a> &middot; <a href="https://chop-fitness.com/terms">Terms of Service</a><span id="cookie-settings-wrap" hidden> &middot; <button class="linklike" type="button" id="cookie-settings">Cookie settings</button></span></span>
+      <span>&copy; 2026 Chop Fitness. All rights reserved. <a href="https://chop-fitness.com/privacy">Privacy Policy</a> &middot; <a href="https://chop-fitness.com/terms">Terms of Service</a> &middot; <a href="https://billing.stripe.com/p/login/8x2dR2gtz2tTeM4bZB2wU00" rel="noopener">Manage your subscription</a><span id="cookie-settings-wrap" hidden> &middot; <button class="linklike" type="button" id="cookie-settings">Cookie settings</button></span></span>
       <span>Chop Fitness provides fitness coaching. We are not a substitute for medical care. For injuries or medical conditions, consult a licensed physician or physical therapist.</span>
     </div>
   </div>
@@ -1088,7 +1088,7 @@ var PAYMENT_LINKS = {
   });
   if (anyPay) {
     var old = document.getElementById('old-checkout');
-    if (old) old.innerHTML = '<small class="pay-note">Payments are handled securely by Stripe.</small>';
+    if (old) old.innerHTML = '<small class="pay-note">Payments are handled securely by Stripe. The $25 assessment fee comes off your first package: ask Jeff for your code.</small>';
   }
 
   // Assessment form
